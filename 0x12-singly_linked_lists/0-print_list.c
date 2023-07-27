@@ -1,29 +1,33 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
-
+#include <stdio.h>
 /**
- * print_list - check the code for Holberton School students.
- * @h: name of the list
- * Return: the number of nodes.
+ * print_list - imrpime todos los elementos de size_t
+ * @h: puntero al inicio de la lista
+ * Return: retorna el numero de nodos
  */
+
 size_t print_list(const list_t *h)
 {
-	int count = 0;
+	size_t counter = 0;
 
-	while (h)
+	/*usamos un while para obtener el numero nodosen "counter"*/
+
+	while (h != NULL)
 	{
 		if (h->str == NULL)
 		{
 			printf("[0] (nil)\n");
+			/*procedemos a imprimir los elementos*/
+			/*dirigimos el pointer a cada elemento de de la estructura a imprimir*/
 		}
 		else
 		{
-		printf("[%d] %s\n", h->len, h->str);
+		printf("[%u] %s\n", h->len, h->str);
 		}
-		count++;
+
+		counter++;
 		h = h->next;
 	}
-	return (count);
+
+return (counter); /*retornamos la cantidad de nodos que se representan en i*/
 }

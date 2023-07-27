@@ -1,21 +1,20 @@
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 #include "lists.h"
-
 /**
- * list_len - check the code for Holberton School students.
- * @h: name of the list
- * Return: the number of nodes.
- */
+ * list_len - imprime numero de elementos vinculados
+ * @h: puntero a structura
+ * Return: Retorna numero de elementos vinculados
+ **/
 size_t list_len(const list_t *h)
 {
-	int count = 0;
+	const list_t *pointer;
+	unsigned int i;/* obtendra numero de elementos vinculados*/
 
-	while (h)
+	pointer = h;/*puntero a puntero*/
+
+	for (i = 0; pointer; i++)
 	{
-		count++;
-		h = h->next;
+		pointer = pointer->next;
 	}
-	return (count);
+	return (i);
 }
