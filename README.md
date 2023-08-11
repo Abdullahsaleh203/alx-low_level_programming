@@ -1,31 +1,34 @@
-# Project: 0x15. C - File I/O
+![c main2](https://user-images.githubusercontent.com/110563322/190150373-b768ab2b-c4f7-470b-b95b-510fd9ee186b.jpg)
 
-## Resources
+*C programming* is a general-purpose, procedural, imperative computer programming language developed in 1972 by Dennis M. Ritchie at the Bell Telephone Laboratories to develop the UNIX operating system. 
+C is the most widely used computer language. It keeps fluctuating at number one scale of popularity along with Java programming language, which is also equally popular and most widely used among modern software programmers.
+## Why to Learn C Programming?
+C programming language is a MUST for students and working professionals to become a great Software Engineer specially when they are working in Software Development Domain. I will list down some of the key advantages of learning C Programming:
+- Easy to learn
+- Structured language
+- It produces efficient programs
+- It can handle low-level activities
+- It can be compiled on a variety of computer platforms
+## Facts about C
+- C was invented to write an operating system called UNIX.
+- C is a successor of B language which was introduced around the early 1970s.
+- The language was formalized in 1988 by the American National Standard Institute (ANSI).
+- The UNIX OS was totally written in C.
+- Today C is the most widely used and popular System Programming Language.
+- Most of the state-of-the-art software have been implemented using C.
 
-#### Read or watch:
 
-* [File descriptors](https://intranet.alxswe.com/rltoken/Duva-9Fjyskt39R__Nnazg)
-* [C Programming in Linux Tutorial #024 - open() read() write() Functions](https://intranet.alxswe.com/rltoken/x05veqiLPSxXmJf9zTtCkQ)
-## Learning Objectives
+<p align="center">
+  <img src="https://i.postimg.cc/rprHShJ1/C-compilation-process.gif" />
+</p>
 
-### General
+## About
 
-* Look for the right source of information online
-* How to create, open, close, read and write files
-* What are file descriptors
-* What are the 3 standard file descriptors, what are their purpose and what are their POSIX names
-* How to use the I/O system calls open, close, read and write
-* What are and how to use the flags O_RDONLY, O_WRONLY, O_RDWR
-* What are file permissions, and how to set them when creating a file with the open system call
-* What is a system call
-* What is the difference between a function and a system call
-## Tasks
+LEARNING THE C PROGRAMMING LANGUAGE AND ITS APPILICATION
 
-| Task | File |
-| ---- | ---- |
-| 0. Tread lightly, she is near | [0-read_textfile.c](./0-read_textfile.c) |
-| 1. Under the snow | [1-create_file.c](./1-create_file.c) |
-| 2. Speak gently, she can hear | [2-append_text_to_file.c](./2-append_text_to_file.c) |
-| 3. cp | [3-cp.c](./3-cp.c) |
-| 4. elf | [100-elf_header.c](./100-elf_header.c) |
+
+-- - 
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://twitter.com/abdallahsaleh25" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="manueldinisjr" height="30" width="40" /></a>
 
