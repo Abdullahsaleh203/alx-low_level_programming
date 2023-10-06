@@ -1,37 +1,28 @@
 #include "hash_tables.h"
-
 /**
- * hash_table_get - Retrieve the value associated with
- *                  a key in a hash table.
- * @ht: A pointer to the hash table.
- * @key: The key to get the value of.
+ * hash_table_get - retrieves a value associated with a key
+ * @ht: hast table where we are going to work
+ * @key: key to use in order to find index , therefore value
  *
- * Return: If the key cannot be matched - NULL.
- *         Otherwise - the value associated with key in ht.
+ * Return: value associated with key or null if key can not be found
  */
-/*
-1. If the hash table is NULL or the key is NULL or the key is an empty string, return NULL.
-2. Get the index of the key.
-3. If the index is greater than or equal to the size of the array, return NULL.
-4. Create a node pointer and set it to the index of the array.
-5. While the node is not NULL and the key is not equal to the key of the node, set the node to the next node.
-6. Return the value of the node or NULL if the node is NULL.
-*/
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	hash_node_t *node;
-	unsigned long int index;
+	hash_node_t *tmp;
+	unsigned long int idx;
 
-	if (ht == NULL || key == NULL || *key == '\0')
+	if (ht == NULL || key == NULL || strlen(key) == 0 ||
+		ht->size == 0 || ht->array == NULL)
 		return (NULL);
 
-	index = key_index((const unsigned char *)key, ht->size);
-	if (index >= ht->size)
-		return (NULL);
+	idx = key_index((const unsigned char *)key, ht->size);
+	tmp = ht->array[idx];
 
-	node = ht->array[index];
-	while (node && strcmp(node->key, key) != 0)
-		node = node->next;
-
-	return ((node == NULL) ? NULL : node->value);
+	while (tmp != NULL)
+	{
+		if (strcmp(tmp->key, key) == 0)
+			return (tmp->value);
+		tmp = tmp->next;
+	}
+	return (NULL);
 }

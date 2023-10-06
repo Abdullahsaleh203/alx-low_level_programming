@@ -6,26 +6,19 @@
  * @key: The key to add - cannot be an empty string.
  * @value: The value associated with key.
  *
- * Return: Upon failure - 0.
- *         Otherwise - 1.
+ * Return: 0 if an error occurs, otherwise return 1
  */
-/*
-1. If the hash table, key, or value is NULL, return 0.
-2. If the key already exists, update the value and return 1.
-3. If the key doesn’t exist, create a new node and add it to the hash table.
-4. Return 1.
-*/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new;
-	char *value_copy;
+	hash_node_t *hn;
+	char *c;
 	unsigned long int index, i;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	value_copy = strdup(value);
-	if (value_copy == NULL)
+	c = strdup(value);
+	if (c == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
@@ -34,26 +27,26 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (strcmp(ht->array[i]->key, key) == 0)
 		{
 			free(ht->array[i]->value);
-			ht->array[i]->value = value_copy;
+			ht->array[i]->value = c;
 			return (1);
 		}
 	}
 
-	new = malloc(sizeof(hash_node_t));
-	if (new == NULL)
+	hn = malloc(sizeof(hash_node_t));
+	if (hn == NULL)
 	{
-		free(value_copy);
+		free(c);
 		return (0);
 	}
-	new->key = strdup(key);
-	if (new->key == NULL)
+	hn->key = strdup(key);
+	if (hn->key == NULL)
 	{
-		free(new);
+		free(hn);
 		return (0);
 	}
-	new->value = value_copy;
-	new->next = ht->array[index];
-	ht->array[index] = new;
+	hn->value = c;
+	hn->next = ht->array[index];
+	ht->array[index] = hn;
 
 	return (1);
 }
